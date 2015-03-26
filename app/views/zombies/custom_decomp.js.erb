@@ -1,0 +1,5 @@
+$('#decomp').text('<%= @zombie.decomp %>').effect('highlight', {}, 3000);
+
+<% if @zombie.decomp == "Dead (again)" %>
+  $('div#custom_phase').fadeOut();
+<% end %>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @zombie.name %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @zombie.bio %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @zombie.age %>
+</p>
+
+<p>
+  <b>Tweets:</b>
+  <%= link_to "Tweets", zombie_tweets_path(@zombie) %>
+</p>
+
+<strong>Decomposition Phase:</strong>
+<span id="decomp"><%= @zombie.decomp %></span>
+
+<div id="custom_phase">
+  <%= form_for @zombie, url: custom_decomp_zombie_path(@zombie), remote: true do |f| %>
+    <strong>Custom Phase</strong>
+    <%= f.text_field :decomp %>
+    <%= f.submit "Set" %>
+  <% end %>
+</div>
+
+<div id="custom_phase2">
+  <%= form_for @zombie, url: custom_decomp_zombie_path(@zombie) do |f| %>
+    <strong>Custom Phase via JSON</strong>
+    <%= f.text_field :decomp %>
+    <%= f.submit "Set" %>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_zombie_path(@zombie) %> |
+<%= link_to 'Back', zombies_path %>

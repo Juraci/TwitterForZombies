@@ -1,0 +1,11 @@
+ZombieMailer#decomp_change
+
+Greetings <%= @zombie.name %>
+
+  Your decomposition state is now <%= @zombie.decomp %> and your tweets are:
+
+  <% @tweets.each do |t| %>
+
+    <%= t.message %>
+
+  <% end %>
