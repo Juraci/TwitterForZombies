@@ -6,7 +6,7 @@ class Zombie < ActiveRecord::Base
   has_many :roles, through: :assignments
   has_many :tweets, dependent: :destroy
 
-  validates :name, presence: true, length: { minimum: 3 }
+  validates :name, presence: true, length: { minimum: 3, maximum: 10 }
 
   private
 

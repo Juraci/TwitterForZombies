@@ -4,6 +4,9 @@
   <%= render @zombies %>
 </div>
 
+<div id="errors">
+</div>
+
 <%= form_for(Zombie.new, remote: true) do |f| %>
   <div class="field">
     <%= f.label :name %><br />

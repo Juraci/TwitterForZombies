@@ -1,6 +1,10 @@
 <% if @zombie.new_record? %>
   $('input#zombie_name').effect('highlight', { color: 'red'});
+  var errors_content = $('#errors')
+  errors_content.empty();
+  errors_content.append("<div><%= @zombie.errors.messages[:name].join(" ") %></div>").effect('highlight', { color: 'red'});
 <% else %>
+  $('#errors').empty();
   $('div#zombies').append("<%= escape_javascript(render @zombie) %>");
   $('div#<%= dom_id(@zombie) %>').effect('highlight');
 <% end %>
